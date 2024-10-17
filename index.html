@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddy - Adoption</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <script src="https://kit.fontawesome.com/68f9c9f9d0.js" crossorigin="anonymous"></script>  
+</head>
+<body class="font-sans bg-white">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between p-6 bg-white shadow-md">
+        <div class="flex items-center">
+            <span class="text-teal-600 text-xl font-bold">🐾 Peddy</span>
+        </div>
+        <nav>
+            <ul class="flex space-x-8">
+                <li><a href="#" class="text-gray-600 hover:text-gray-900">Home</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-gray-900">Shop</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-gray-900">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="text-gray-600 hover:text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m0 0h.01m5.99 0c1.1 0 2-.9 2-2v0a2 2 0 10-4 0v0c0 1.1.9 2 2 2zm-6 0c1.1 0 2-.9 2-2v0a2 2 0 10-4 0v0c0 1.1.9 2 2 2z"/>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Main Section -->
+    <main class="my-12">
+        <section class="text-center">
+            <p class="text-teal-600 mb-2">Bringing Families Together 🧡</p>
+        <h1 class="text-4xl text-black font-bold mb-4">Your Path to Adoption Starts Here</h1>
+        <p class="text-black mb-6 max-w-xl mx-auto">
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+        </p>
+        <button class="bg-teal-600 text-white py-3 px-8 rounded-lg hover:bg-teal-500">View More</button>
+        </section>
+    
+
+    <!-- Image Section -->
+    <section class="flex justify-center my-12">
+        <img src="./images/pet.webp" alt="Dog and Cat" class="w-1/2 rounded-lg shadow-lg">
+    </section>
+
+    <!-- Footer Section -->
+    <div class="max-w-[1280px] m-auto mt-8">
+        <div class="text text-center">
+        <h1 class="text-4xl font-bold pt-[3vh]">Adopt Your Best Friend</h1>
+        <p class="py-6 max-w-2xl m-auto"> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    </div>
+
+    <!-- pet category button here -->
+     <div id="pet-categories" class="flex gap-6 justify-center lg:justify-between items-center my-6">
+
+     </div>
+
+
+     <div class="flex items-center justify-between p-2">
+        <h3 class="font-bold text-lg text-black">Best Deal For you</h3>
+        <button onclick="sort()" id="sortByPrice" class="btn bg-teal-600 text-white">
+            Sort by Price
+        </button>
+     </div>
+
+     <!-- Cards and Images section here -->
+      <div class="my-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-2">
+            <!-- card section -->
+         <div class="lg:col-span-3">
+            <!-- spinner -->
+             <div id="loader" class="hidden">
+                <div class="relative flex justify-center items-center">
+                    <div class="absolute animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-teal-700"></div>
+                    <img src="./images/logo.webp"  class="rounded-full">
+                </div>
+             </div>
+             <!-- Cards -->
+              <div
+               id="all-pets" 
+               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically pet cards here -->
+              </div>
+         </div>
+         <!-- images section -->
+          <div id="liked-pets"
+           class="w-full h-fit rounded-xl border grid grid-cols-2 gap-2 p-2">
+            <!-- Dynamic pet images here -->
+          </div>
+        </div>
+      </div>
+
+
+     <!-- Adopt Modal -->
+      <button onclick="my_modal_4.showModal()" class="btn btn-outline">
+        Adopt Modal
+    </button>
+
+    <dialog id="my_modal_4" class="modal">
+    </dialog>
+
+   </main>
+
+
+   <script src="./utilities.js"></script>
+   <script src="./script/script.js"></script>
+</body>
+</html>
