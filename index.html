@@ -37,9 +37,10 @@
         <p class="text-black mb-6 max-w-xl mx-auto">
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
         </p>
+        <a href="#adopt-container">
         <button class="bg-teal-600 text-white py-3 px-8 rounded-lg hover:bg-teal-500">View More</button>
         </section>
-    
+        </a>
 
     <!-- Image Section -->
     <section class="flex justify-center my-12">
@@ -49,7 +50,7 @@
     <!-- Footer Section -->
     <div class="max-w-[1280px] m-auto mt-8">
         <div class="text text-center">
-        <h1 class="text-4xl font-bold pt-[3vh]">Adopt Your Best Friend</h1>
+        <h1 id="adopt-container" class="text-4xl font-bold pt-[3vh]">Adopt Your Best Friend</h1>
         <p class="py-6 max-w-2xl m-auto"> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
     </div>
 
@@ -95,11 +96,16 @@
 
 
      <!-- Adopt Modal -->
-      <button onclick="my_modal_4.showModal()" class="btn btn-outline">
-        Adopt Modal
-    </button>
-
+      
     <dialog id="my_modal_4" class="modal">
+    <div class="modal-box">
+    <div id="adoptedCard" class="z-30 flex items-center justify-center flex-col bg-white ">
+    <i class="fa-regular fa-handshake"></i>
+    <h2 class="text-2xl lg:text-3xl font-bold my-2">Congratulation</h2>
+    <p class="font-semibold my-3">Adoption will be done in</p>
+    <p id="countdown-container" class="text-5xl mb-4 font-bold">3</p>
+    </div>
+    </div>
     </dialog>
 
    </main>

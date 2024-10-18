@@ -1,4 +1,4 @@
-// Save/store current fatched pets data
+// Save/store current fetch pets data
 
 let storedPetsData = [];
 
@@ -44,5 +44,13 @@ const like= imgUrl => {
 
 // handle sort data
 const sort = () => {
- console.log(storedPetsData);
+ loadingSpinner(true)
+ const sortedData = storedPetsData.sort((a, b) => b.price - a.price)
+ setTimeout(() => {
+  displayPets(sortedData)
+  loadingSpinner(false)
+ }, 500)
 }
+
+
+
