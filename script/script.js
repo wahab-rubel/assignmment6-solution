@@ -31,6 +31,23 @@ const loadPetsByCategory = async category => {
   loadingSpinner(false)
  }, 2000)
 }
+const loadPetsDetails = async id => {
+ 
+ const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
+ const data = await res.json();
+ 
+ displayPetDetails(data.petData)
+}
+
+const displayPetDetails = data =>{
+ console.log(data)
+const modalBody = document.getElementById('details-container')
+modalBody.innerHTML = `
+<img class="h-60 rounded-xl object-cover w-full" src="${data.image}" />
+<h3 class="text-xl font-bold my-2">${data.pet_name}</h3>
+`
+my_modal_5.showModal()
+}
 
 
 const displayCategories = data => {
@@ -50,6 +67,23 @@ const displayCategories = data => {
 
 const displayPets = data => {
  const petContainers = document.getElementById('all-pets');
+
+ if(data.length === 0){
+petContainers.classList.remove('grid')
+petContainers.innerHTML = `
+<div class="bg-gray-400 p-20 rounded-lg text-center space-y-4">
+<img class="mx-auto" src="./images/error.webp"/>
+<h3 class="text-white text-3xl font-semibold">No Information Available!</h3>
+<p class="text-white">It is a long established fact that a reader will be distracted by the readable content of a page when looking at <br>
+its layout. The point of using Lorem Ipsum is that it has a.</p>
+</div>
+
+`
+
+  return
+ } else(
+  petContainers.classList.add('grid')
+ )
  
  data.forEach(pet => {
   const div = document.createElement('div')
@@ -77,7 +111,7 @@ const displayPets = data => {
   <div class="flex justify-between items-center px-2">
    <button onclick="like ('${pet.image}')" class="btn bg-white text-gray-700 px-4 py-2 rounded-lg shadow-2xl"><i class="fa-regular fa-thumbs-up"></i></button>
    <button onclick="adoptModal(this)" class="btn bg-white text-[#0E7A81] px-4 py-2 rounded-lg">Adopt</button>
-   <button class="btn bg-white text-[#0E7A81] px-4 py-2 rounded-lg">Details</button>
+   <button onclick="loadPetsDetails('${pet.petId}')" class="btn bg-white text-[#0E7A81] px-4 py-2 rounded-lg">Details</button>
   </div>
   `
 
